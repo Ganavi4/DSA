@@ -1,0 +1,18 @@
+class Solution {
+    public void moveZeroes(int[] nums) {        //here we 1st ignore 0's and focus on non-0's ,arrange them in same order till the pointer comes to an end of array than insert 0's to the remaining places
+        int inserting=0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]!=0){
+                nums[inserting]=nums[i];
+                inserting++;
+            }
+        }
+        while(inserting<nums.length){
+            nums[inserting]=0;
+            inserting++;
+        }
+    }
+}
+
+//time complexity is O(n) bcs, only one time the entire array is iterated i.e of n element
+//space complexity is O(1) bcs, in-place no need of extra space so constant 
